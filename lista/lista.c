@@ -4,33 +4,22 @@
 
 Lista* lista_crear()
 {
-    
-    /*
-    TODO:
-
-    1 Crear un apuntador a lista
-    2 Reswevar memoria para lista
-    3 Devolver la lista
-    */
+    lista* ProLista = (Lista*)malloc(sizeof(Lista));
+    if(ProLista != NULL){
+        ProLista -> head = NULL;
+        ProLista -> tail = NULL;
+    }
+    return(ProLista);
 }
 
-int lista_vacia(Lista* lista)
-{
-    
+bool lista_vacia(Lista* lista){
+    if(lista -> tail= NULL){
+        return(lista = NULL)
+    }
 }
 
-void lista_insertar_head(Lista* lista, int dato)
-{
-    /*
-    TODO:
-
-    1 Crear nuevo nodo
-    2 Si lista está vacía:
-        head y tail apuntan al nuevo nodo
-    3 Si no:
-        head apunta al nuevo nodo
-        actualizar tail
-    */
+void lista_insertar_head(Lista* lista, int dato){
+    
 }
 
 void lista_insertar_tail(Lista* lista, int dato)
