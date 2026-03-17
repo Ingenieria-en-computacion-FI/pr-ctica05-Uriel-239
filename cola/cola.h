@@ -1,6 +1,5 @@
 #ifndef COLA_H
 #define COLA_H
-
 #include "../lista/lista.h"
 
 typedef Lista Cola;
