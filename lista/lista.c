@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h> // Necesario para el tipo bool
+#include <stdbool.h>
 #include "lista.h"
 
 Lista* lista_crear()
@@ -38,13 +38,12 @@ void lista_insertar_tail(Lista* lista, int dato)
     nuevo->dato = dato;
     nuevo->sig = NULL;
 
-    elif (lista_vacia(lista)) {
+    if (lista_vacia(lista)) {
         lista->head = nuevo;
         lista->tail = nuevo;
-        
     } else {
-        lista -> tail -> sig = nuevo;
-        lista -> tail = nuevo;
+        lista->tail->sig = nuevo;
+        lista->tail = nuevo;
     }
 }
 
