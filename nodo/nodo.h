@@ -3,7 +3,7 @@
 
 typedef struct Nodo {
     int dato;
-    struct Nodo* siguiente;
+    struct Nodo* sig;
 } Nodo;
 
 Nodo* nodo_crear(int dato);
