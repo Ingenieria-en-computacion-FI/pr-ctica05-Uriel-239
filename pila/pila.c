@@ -1,19 +1,16 @@
 #include <stdlib.h>
+#include <stdbool.h>
 #include "pila.h"
-#include "lista.h"
+#include "../lista/lista.h" 
 
 Pila* pila_crear()
 {
-    Pila* nuevaPila = (Pila*)malloc(sizeof(Pila));
-    if (nuevaPila != NULL) {
-        nuevaPila->lista = lista_crear();
-    }
-    return nuevaPila;
+    return (Pila*)lista_crear();
 }
 
 int pila_vacia(Pila* pila)
 {
-    if (pila == NULL || lista_vacia(pila->lista)) {
+    if (pila == NULL || lista_vacia((Lista*)pila)) {
         return 1;
     }
     return 0;
@@ -22,7 +19,7 @@ int pila_vacia(Pila* pila)
 void pila_push(Pila* pila, int dato)
 {
     if (pila != NULL) {
-        lista_insertar_tail(pila->lista, dato);
+        lista_insertar_tail((Lista*)pila, dato);
     }
 }
 
@@ -31,22 +28,20 @@ int pila_pop(Pila* pila)
     if (pila_vacia(pila)) {
         return -1; 
     }
-    return lista_eliminar_tail(pila->lista);
+    return lista_eliminar_tail((Lista*)pila);
 }
 
-int pila_top(Pila* pila)
+int pila_top(Pila* pila) 
 {
     if (pila_vacia(pila)) {
         return -1;
     }
-    
-    return pila->lista->tail->dato;
+        return pila->tail->dato;
 }
 
 void pila_destruir(Pila* pila)
 {
     if (pila != NULL) {
-        lista_destruir(pila->lista);
-        free(pila);
+        lista_destruir((Lista*)pila);
     }
 }
