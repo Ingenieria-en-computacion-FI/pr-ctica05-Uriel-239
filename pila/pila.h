@@ -1,6 +1,5 @@
 #ifndef PILA_H
 #define PILA_H
-
 #include "../lista/lista.h"
 
 typedef Lista Pila;
