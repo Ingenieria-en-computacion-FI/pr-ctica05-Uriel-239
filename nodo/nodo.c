@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "nodo.h"
+#include <stdbool.h>
 
 Nodo* nodo_crear(int dato) {
     Nodo* PlusNodo = (Nodo*)malloc(sizeof(Nodo));
