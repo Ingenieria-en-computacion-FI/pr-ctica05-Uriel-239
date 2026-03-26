@@ -3,6 +3,8 @@
 #include "cola.h"
 #include "../lista/lista.h"
 
+
+
 Cola* cola_crear()
 {
     return (Cola*)lista_crear();
@@ -15,7 +17,7 @@ int cola_vacia(Cola* cola)
 
 void cola_enqueue(Cola* cola, int dato)
 {
-    lista_insertar_tail((Lista*)cola, dato);
+    return lista_insertar_tail((Lista*)cola, dato);
 }
 
 int cola_dequeue(Cola* cola)
